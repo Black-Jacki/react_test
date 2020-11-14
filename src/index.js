@@ -7,7 +7,7 @@ import Hello2 from '@/components/Hello2'
 const routes = (
     <div>
         <Hello></Hello>
-        <Hello2></Hello2>
+        <Hello2 name="zhangsan"></Hello2>
     </div>
 )
 // 展示虚拟DOM

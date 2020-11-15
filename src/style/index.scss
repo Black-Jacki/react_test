@@ -5,7 +5,7 @@
 }
 
 .cor {
-    color: red;
+    color: rgb(255, 174, 0);
 }
 
 .content {
@@ -47,4 +47,12 @@
     border: 1px solid #87c3e6;
     border-radius: 3px;
     outline: none;
+}
+
+.scss-test {
+    font: bold 20px/20px '';
+    color: yellowgreen;
+    span {
+        color: red;
+    }
 }

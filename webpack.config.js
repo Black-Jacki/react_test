@@ -30,25 +30,30 @@ module.exports = {
                 use: { loader: 'babel-loader' },
                 exclude: /node_modules/, // 排除项
             },
+            // 自己写的样式使用.scss，使用sass-loader打包处理，并开启模块化
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader?modules', 'sass-loader'], // 打包处理scss样式表的第三方加载程序
+            },
+            // 第三方样式表使用.css，使用css-loader打包处理
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader?modules'], // 打包处理css样式表的第三方加载程序
-                exclude: /node_modules/, // 排除项
+                use: ['style-loader', 'css-loader'], // 打包处理css样式表的第三方加载程序
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: ['file-loader']
+                use: ['file-loader'] // 静态资源通过file-loader打包处理
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: ['file-loader']
+                use: ['file-loader'] // 静态资源通过file-loader打包处理
             }
         ]
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json'], // 这几个后缀名可以省略不写，自动补全
         alias: {
-            '@': path.join(__dirname, './src')
+            '@': path.join(__dirname, './src') // @符号来代替src目录，通过@直接调用
         }
     }
 }

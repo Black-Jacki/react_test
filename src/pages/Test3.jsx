@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import cssobj from '@/style/index.css'
+import cssobj from '@/style/index.scss'
 
 class Test extends Component {
     constructor(props) {

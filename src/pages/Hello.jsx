@@ -1,8 +1,8 @@
 import React from 'react'
-import cssobj from '@/style/index.css'
+import cssobj from '@/style/index.scss'
 
 function Hello(val) {
-    return (<div className={[cssobj['title'], cssobj['cor']].join(' ')}>评论列表</div>)
+    return (<div className={[cssobj['title'], cssobj['cor']].join(' ')}>Ant-Design学习</div>)
 }
 
 export default Hello

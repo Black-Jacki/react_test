@@ -2,6 +2,7 @@ const path = require('path')
 // 导入在内存中自动生成index页面的插件
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
+let newCookie;
 // 向往暴露一个打包的配置对象
 // webpack只能打包处理.js后缀类型的文件
 module.exports = {
@@ -14,6 +15,25 @@ module.exports = {
         hot: true,
         host: 'localhost',
         port: 8080,
+        proxy: {
+            context: "/",
+            target: 'https://www.facenom.com/',
+            changeOrigin: true,
+            logLevel: 'debug',
+            secure: false,
+            cookieDomainRewrite: "",
+            onProxyReq(proxyReq, req) {
+                // 设置代理服务的请求头信息，带上cookie，解决跨域登录后访问请求验权问题
+                newCookie && proxyReq.setHeader('Cookie', newCookie);
+            },
+            onProxyRes(proxyRes, req, res) {
+                //登录后获取cookies信息
+                var cookies = proxyRes.headers['set-cookie'];
+                if (cookies) {
+                    newCookie = cookies[0].split(';')[0];
+                }
+            }
+        }
     },
 
     plugins: [

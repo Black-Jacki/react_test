@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import scss from '@/style/index.scss'
+import logic from '@/pages/logic'
 
 class Hello2 extends Component {
     constructor() {
@@ -99,6 +100,7 @@ class Hello2 extends Component {
                     <input type="text" className={scss.ipt} value={that.state.num} onChange={(e) => that.txtChanged(e)} />
                     {calc}
                 </div>
+                <button className={scss['btn-change']} onClick={logic.req}>请求</button>
             </div>
         )
     }

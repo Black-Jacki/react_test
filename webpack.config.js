@@ -27,10 +27,21 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/, // js|jsx正则表达式
-                use: {
-                    loader: 'babel-loader'
-                },
+                use: { loader: 'babel-loader' },
                 exclude: /node_modules/, // 排除项
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader?modules'], // 打包处理css样式表的第三方加载程序
+                exclude: /node_modules/, // 排除项
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: ['file-loader']
             }
         ]
     },

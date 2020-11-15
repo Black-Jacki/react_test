@@ -1,0 +1,50 @@
+.title {
+    font: bold 24px/24px 'Microsoft Yahei';
+    color: #666666;
+    margin: 15px 0;
+}
+
+.cor {
+    color: red;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content span {
+    font: normal 14px/40px 'Microsoft Yahei';
+    color: #666666;
+    border: 1px solid #dddddd;
+    width: 150px;
+    height: 40px;
+    text-indent: 12px;
+    margin: -1px -1px 0 0;
+    background: #f8fbff;
+}
+
+.btn-change {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 60px;
+    height: 30px;
+    border: 1px solid #87c3e6;
+    background: #daeaff;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px #cccccc;
+    outline: none;
+    cursor: pointer;
+}
+
+.ipt {
+    width: 200px;
+    height: 20px;
+    text-indent: 6px;
+    font: normal 14px/20px 'Microsoft Yahei';
+    color: #666666;
+    margin: 20px 0 0 10px;
+    border: 1px solid #87c3e6;
+    border-radius: 3px;
+    outline: none;
+}

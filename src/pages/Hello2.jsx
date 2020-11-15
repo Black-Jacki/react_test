@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import cssobj from '@/style/index.scss'
+import scss from '@/style/index.scss'
 
 class Hello2 extends Component {
     constructor() {
@@ -74,29 +74,29 @@ class Hello2 extends Component {
 
         let calc, ipt, btn
         if (that.state.num) {
-            calc = <button className={cssobj['btn-change']} onClick={() => that.calc()}>计算</button>
+            calc = <button className={scss['btn-change']} onClick={() => that.calc()}>计算</button>
         }
         if (that.state.isipt) {
-            ipt = <input type="text" className={cssobj.ipt} />
-            btn = <button onClick={() => that.change_ipt()}>完成</button>
+            ipt = <input type="text" className={scss.ipt} />
+            btn = <button style={{'height': '20px'}} onClick={() => that.change_ipt()}>完成</button>
         } else {
             ipt = '年龄：18'
-            btn = <button onClick={() => that.change_ipt()}>更改</button>
+            btn = <button style={{'height': '20px'}} onClick={() => that.change_ipt()}>更改</button>
         }
 
         return (
-            <div>
+            <div className={scss.box}>
                 {that.state.msglist.map((item, index) =>
-                    <div className={cssobj['content']} key={index}>
+                    <div className={scss['content']} key={index}>
                         <span onClick={() => that.showIndex(index)}>序号：{index + 1}</span>
                         <span>姓名：{item.name}</span>
                         <span>{ipt}{btn}</span>
                     </div>)}
-                <button className={cssobj['btn-change']} onClick={() => that.add_msg()}>增加</button>
-                <button className={cssobj['btn-change']} onClick={() => that.del_msg()}>删除</button>
+                <button className={scss['btn-change']} onClick={() => that.add_msg()}>增加</button>
+                <button className={scss['btn-change']} onClick={() => that.del_msg()}>删除</button>
                 <div>
                     <div>{that.state.show}</div>
-                    <input type="text" className={cssobj.ipt} value={that.state.num} onChange={(e) => that.txtChanged(e)} />
+                    <input type="text" className={scss.ipt} value={that.state.num} onChange={(e) => that.txtChanged(e)} />
                     {calc}
                 </div>
             </div>

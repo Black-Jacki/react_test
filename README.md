@@ -1,7 +1,13 @@
-# This is a React Project Demo
+# #This is a React Project Demo
+> React测试项目
 
-## npm install    //下载依赖
+```
+# 下载依赖
+npm install
 
-## npm run dev    //本地运行项目
+# 本地运行项目
+npm run dev
 
-## npm run build    //打包项目
+# 打包项目
+npm run build
+```

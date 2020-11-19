@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch, } from 'react-router-dom'
-import Antd from '@/pages/Antd'
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+
+import Test from '@/pages/Test'
 
 
 class Router extends Component {
@@ -10,9 +11,9 @@ class Router extends Component {
 
     render() {
         return (
-            <BrowserRouter>
-                <Antd></Antd>
-            </BrowserRouter>
+            <>
+                <Test />
+            </>
         )
     }
 }

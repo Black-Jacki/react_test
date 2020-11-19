@@ -17,7 +17,7 @@ module.exports = {
         port: 8080,
         proxy: {
             context: "/",
-            target: 'https://www.facenom.com/',
+            target: 'https://www.facenom.cn/',
             changeOrigin: true,
             logLevel: 'debug',
             secure: false,

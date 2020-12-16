@@ -1,17 +1,11 @@
 export default {
     defualts(props) {
-        return {
-            name: 'zhangsan',
-            age: 18,
-            genger: 'man'
-        }
+        return {}
     },
 
     test(ctx) {
-        const { fn:{hello, test}, getState, setState } = ctx
-        // console.log(ctx)
-        // test()
-        
+        const { fn: { hello, test }, getState, setState } = ctx
+
         console.log(getState())
     }
 }

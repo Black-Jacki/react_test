@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "dev": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -32,7 +32,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "antd": "^4.8.2",
+    "echarts": "^5.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.2.0",

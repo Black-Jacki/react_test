@@ -17,7 +17,7 @@ module.exports = {
         port: 8080,
         proxy: {
             context: "/",
-            target: 'https://www.facenom.cn/',
+            target: 'https://www.timeitem.com',
             changeOrigin: true,
             logLevel: 'debug',
             secure: false,
@@ -61,13 +61,17 @@ module.exports = {
                 use: ['style-loader', 'css-loader'], // 打包处理css样式表的第三方加载程序
             },
             {
+                test: /\.less/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+            },
+            {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: ['file-loader'] // 静态资源通过file-loader打包处理
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: ['file-loader'] // 静态资源通过file-loader打包处理
-            }
+            },
         ]
     },
     resolve: {

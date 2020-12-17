@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import loadable  from '@loadable/component'
 
-import Test from '@/pages/Test'
+
+const Test = loadable(() => import('@/pages/Test'))
+const ProTableTest = loadable(() => import('@/pages/ProTableTest'))
 
 
 class Router extends Component {
@@ -12,7 +15,8 @@ class Router extends Component {
     render() {
         return (
             <>
-                <Test />
+                {/* <Test /> */}
+                <ProTableTest />
             </>
         )
     }

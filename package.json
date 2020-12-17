@@ -34,10 +34,14 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@ant-design/icons": "^4.3.0",
     "@ant-design/pro-table": "^2.11.4",
+=======
+>>>>>>> f46edbe49a7942a8f40611f918e88f7472c65bf6
     "@loadable/component": "^5.14.1",
     "antd": "^4.8.2",
+    "echarts": "^5.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.2.0",

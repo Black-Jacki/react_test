@@ -15,7 +15,7 @@ class Router extends Component {
     render() {
         return (
             <>
-                {/* <Test /> */}
+                <Test />
                 <ProTableTest />
             </>
         )

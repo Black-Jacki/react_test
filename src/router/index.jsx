@@ -4,7 +4,6 @@ import loadable  from '@loadable/component'
 
 
 const Test = loadable(() => import('@/pages/Test'))
-const ProTableTest = loadable(() => import('@/pages/ProTableTest'))
 
 
 class Router extends Component {
@@ -16,7 +15,6 @@ class Router extends Component {
         return (
             <>
                 <Test />
-                <ProTableTest />
             </>
         )
     }

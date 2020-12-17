@@ -6,13 +6,11 @@ import 'echarts/lib/chart/bar'
 // 引入提示框和标题组件
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
+import ReactEcharts from 'echarts-for-react'
 
 
-const MyChart = () => {
-    // 基于准备好的dom，初始化echarts实例
-    const myChart = echarts.init(document.querySelector('.main'));
-    // 绘制图表
-    myChart.setOption({
+const myChart = (params) => {
+    return {
         title: {
             text: 'ECharts 入门示例'
         },
@@ -26,7 +24,7 @@ const MyChart = () => {
             type: 'bar',
             data: [5, 20, 36, 10, 10, 20]
         }]
-    });
+    }
 }
 
 class Test extends Component {
@@ -34,22 +32,26 @@ class Test extends Component {
         super(props, Logic)
         this.state = {
             verCode: '',
+            data: [5, 20, 36, 10, 10, 20],
         }
-    }
-
-    componentDidMount() {
-        MyChart()
     }
 
     toTest = () => {
         this.dispatch('test')
     }
 
-
     render() {
         return (
             <>
-                <div className={"main"} style={{ width: 400, height: 400 }}></div>
+                <div>
+                    <ReactEcharts
+                        option={myChart()}
+                        notMerge={true}
+                        lazyUpdate={true}
+                        style={{ width: '700px', height: '700px' }}
+                    />
+                </div>
+
             </>
         )
     }

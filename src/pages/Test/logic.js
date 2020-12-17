@@ -8,6 +8,6 @@ export default {
     test(ctx) {
         const { fn: { hello, test }, getState, setState } = ctx
 
-        console.log(getState())
-    }
+        console.log('hello')
+    },
 }

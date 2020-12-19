@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { HashRouter, Route, Switch, Link } from 'react-router-dom'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import loadable from '@loadable/component'
 
 
+const Login = loadable(() => import('@/pages/Login'))
 const Test = loadable(() => import('@/pages/Test'))
-
 
 class Router extends Component {
     constructor() {
@@ -16,7 +16,8 @@ class Router extends Component {
             <>
                 <HashRouter>
                     <Switch>
-                        <Route path='/test' component={Test} />
+                        <Route path="/"><Login /></Route>
+                        <Route path="/test"><Test /></Route>
                     </Switch>
                 </HashRouter>
             </>

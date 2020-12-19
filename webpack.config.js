@@ -3,7 +3,7 @@ const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 let newCookie;
-// 向往暴露一个打包的配置对象
+// 向外暴露一个打包的配置对象
 // webpack只能打包处理.js后缀类型的文件
 module.exports = {
     mode: 'development',

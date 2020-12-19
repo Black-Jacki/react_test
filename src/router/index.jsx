@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
-import loadable  from '@loadable/component'
+import { HashRouter, Route, Switch, Link } from 'react-router-dom'
+import loadable from '@loadable/component'
 
 
 const Test = loadable(() => import('@/pages/Test'))
@@ -14,7 +14,11 @@ class Router extends Component {
     render() {
         return (
             <>
-                <Test />
+                <HashRouter>
+                    <Switch>
+                        <Route path='/test' component={Test} />
+                    </Switch>
+                </HashRouter>
             </>
         )
     }

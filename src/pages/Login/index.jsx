@@ -13,14 +13,27 @@ class Login extends Component {
     }
 
     setToken = () => {
-        // sessionStorage.setItem('adminToken', 'hello')
-        // localStorage.setItem('adminToken', 'hello')
+        // sessionStorage.setItem('adminToken2', 'hello2')
+        // localStorage.setItem('adminToken2', 'hello2')
+        document.cookie = 'name1=zhangsan1'
+        document.cookie = 'name2=zhangsan2'
+        document.cookie = 'name3=zhangsan3'
     }
 
     getToken = () => {
         // const token = sessionStorage.getItem('adminToken')
+        // console.log(token)
+        const cookie = document.cookie
+        const cookieList = cookie.split(';')
+        return cookieList
+    }
+
+    delToken = () => {
         // sessionStorage.clear()
         // localStorage.clear()
+        this.getToken().map(item => {
+            document.cookie = item.split('=')[0] + '=; expires=' + new Date().toUTCString()
+        })
     }
 
     onFinish = (values) => {
@@ -54,8 +67,15 @@ class Login extends Component {
                         <Form.Item label="密码" name='password' style={{ marginLeft: 14 }}>
                             <Input.Password style={{ width: 220 }} />
                         </Form.Item>
-                        <Button type="primary" htmlType="submit" onClick={() => this.setToken()}>登录</Button>
-                        <Button style={{ marginLeft: 20 }} onClick={() => this.onReset()}>重置</Button>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" style={{ marginLeft: 20 }}>登录</Button>
+                            <Button style={{ marginLeft: 20 }} onClick={() => this.onReset()}>重置</Button>
+                        </Form.Item>
+                        <Form.Item>
+                            <Button style={{ marginLeft: 20 }} onClick={() => this.setToken()}>设置</Button>
+                            <Button style={{ marginLeft: 20 }} onClick={() => this.getToken()}>获取</Button>
+                            <Button style={{ marginLeft: 20 }} onClick={() => this.delToken()}>删除</Button>
+                        </Form.Item>
                     </Form>
                 </Card>
             </>

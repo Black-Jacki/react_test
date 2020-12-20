@@ -16,7 +16,8 @@ class Router extends Component {
             <>
                 <HashRouter>
                     <Switch>
-                        <Route path="/"><Login /></Route>
+                        <Route exact path="/"><Login /></Route>
+                        <Route path="/login"><Login /></Route>
                         <Route path="/test"><Test /></Route>
                     </Switch>
                 </HashRouter>

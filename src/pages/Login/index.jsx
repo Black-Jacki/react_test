@@ -37,9 +37,9 @@ class Login extends Component {
     }
 
     onFinish = (values) => {
-        const password = Crypto.MD5(values.password).toString()
-        console.log(password)
-        // this.dispatch('request')
+        // const password = Crypto.MD5(values.password).toString()
+        // console.log(password)
+        this.dispatch('request')
     }
 
     onReset = () => {
